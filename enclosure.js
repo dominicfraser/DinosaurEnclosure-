@@ -7,12 +7,11 @@ Enclosure.prototype = {
     this.contents.push(dino);
   },
   removeByType: function(type){
-    for (var dino of this.contents){
-      if (dino.type === type) {
-        var pos = this.contents.indexOf(dino);
-        this.contents.splice(pos, 1);
+    for (var i = this.contents.length-1; i>=0;i--){
+      if (this.contents[i].type === type) {
+        this.contents.splice(i, 1);
       };
-
+// have to go backwards as array size is decreasing
     }
   },
   findFeqBreeders: function(){
